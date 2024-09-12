@@ -17,7 +17,7 @@ public class Main {
         // losujemy wartości 1-100
 
         for (int i = 0; i < tablicaLiczbLosowych.length; i++) {
-            tablicaLiczbLosowych[i] = (int)(Math.random()*100+1);
+            tablicaLiczbLosowych[i] = (int)(Math.random()*100);
         }
         //wypisywanie tablicy na ekranie
 
@@ -43,7 +43,7 @@ public class Main {
         //jeśli byłoby na początku ArrayList, nie można by było zmienić
 
         for (int i = 0; i < 6; i++) {
-            int liczba = (int)(Math.random()*100);
+            int liczba = (int)(Math.random()*10);
             listaLiczbLosowych.add(liczba);
         }
         System.out.println("Wylosowana lista");
@@ -51,6 +51,21 @@ public class Main {
             System.out.print(element + ", ");
         }
         System.out.println(tablicaLiczbLosowych);
+
+        //losowanie do listy bez powtórzeń
+
+        ArrayList <Integer> listaLosowychBezPowtorzen = new ArrayList<>();
+        int liczba;
+        for (int i = 0; i < 6; i++) {
+            liczba = (int)(Math.random()*100+1);
+
+            while(listaLosowychBezPowtorzen.contains(liczba)) {
+                liczba = (int)(Math.random()*100+1);
+            }
+            listaLosowychBezPowtorzen.add(liczba);
+        }
+
+        System.out.println(listaLosowychBezPowtorzen);
 
     }
 }
