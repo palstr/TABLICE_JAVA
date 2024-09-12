@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -84,5 +82,28 @@ public class Main {
         }
         System.out.println("Zbiór liczb losowych: ");
         System.out.println(zbiorLiczbLosowych);
+
+        //lista liczb wczytywanych z klawiatury
+        Scanner klawiatura = new Scanner(System.in);
+        LinkedList<Integer> listaLiczbZKlawiatury = new LinkedList<>();
+        System.out.println("Wpisz 6 liczb");
+        for (int i = 0; i < 6; i++) {
+            int wpisanaLiczba = klawiatura.nextInt();
+            listaLiczbZKlawiatury.add(wpisanaLiczba);
+        }
+
+        // trafione, czyli będące we wpisanych i wylosowanych
+        ArrayList<Integer> trafione = new ArrayList<>();
+        for (Integer element:listaLosowychBezPowtorzen) {
+            if (listaLiczbZKlawiatury.contains(element)){
+                trafione.add(element);
+            }
+        }
+        System.out.println("Trafione:");
+        System.out.println(trafione);
+
+        // trafione.get(0);
+
+
     }
 }
